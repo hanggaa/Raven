@@ -15,7 +15,7 @@ body {
 </style>
 </head>
 <body  onresize='_pexresize()'>
-<audio hidden autoplay loop>
+<audio id="audio" hidden loop>
     <source src="raven1.wav" type = "audio/wav">
 </audio>
 	<canvas id='canvas' width='1280' height='720'>
@@ -121,6 +121,12 @@ var canvas = document.getElementById('canvas');
 
 
 		animate();
+
+        // Add this code to auto play the audio when a user clicks anywhere
+        document.addEventListener('click', function() {
+            var audio = document.getElementById('audio');
+            audio.play();
+        });
 
 </script>
 </html>
